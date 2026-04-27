@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const admin = require('firebase-admin');
 const axios = require('axios');
 const { createClient } = require('@supabase/supabase-js');
 require('dotenv').config();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 // Initialize Supabase Admin (Used to lookup push_tokens)
