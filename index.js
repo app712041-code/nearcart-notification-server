@@ -31,6 +31,11 @@ try {
 
 const EXPO_PUSH_URL = "https://exp.host/--/api/v2/push/send";
 
+// Health Check for UptimeRobot and Render
+app.get('/', (req, res) => {
+    res.send('NearCart Notification Server is Live and Healthy! 🚀');
+});
+
 app.post('/send-notification', async (req, res) => {
     try {
         const { userId, title, message, orderId, type } = req.body;
